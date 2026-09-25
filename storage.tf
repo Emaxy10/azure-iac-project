@@ -8,7 +8,7 @@ resource "azurerm_storage_account" "main" {
   min_tls_version = "TLS1_2"
 
   tags = {
-    Environment = "Lab"
+    Environment = var.environment
     ManagedBy   = "Terraform"
   }
 }
