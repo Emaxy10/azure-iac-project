@@ -12,3 +12,9 @@ resource "azurerm_storage_account" "main" {
     ManagedBy   = "Terraform"
   }
 }
+
+resource "azurerm_storage_container" "tfstate" {
+  name                  = "tfstate"
+  storage_account_id    = azurerm_storage_account.main.id
+  container_access_type = "private"
+}
